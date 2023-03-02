@@ -16,12 +16,16 @@
         echo "php starting...<br>";
         //statement($pdo,"(firstName, lastName)","'Alessio', 'Petrotta'");
         //$statement = $pdo ->prepare("INSERT INTO ppl (firstName,lastName) VALUES ('Alessio','Petrotta');");
-        $nome = "Alessio";
-        $cognome = "Petrotta";
+        
+        
+        
+        statement($pdo,"firstName,lastName","Giulio,Giulini");
+        
+
         //$statement ->execute([]);
         echo "php closing";
     ?>
-    <form action="#">
+    <form action="#" target="_self" method="post">
         <label for="name">NOME:</label><input type="text" name="name" id="name"><br>
         <label for="surname">COGNOME:</label><input type="text" name="surname" id="surname"><br>
         <input type="submit" value="submit" name="submit">
