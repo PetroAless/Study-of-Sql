@@ -1,0 +1,8 @@
+Sql, structured query language, programming language used to read, write and delete databases.
+It uses mysql in my example to read sql queries and execute the commands.
+//using xampp obv
+
+Basic commands //there will be exercises later or notes after 2 slashes
+
+//it is a best practice to write commands in all caps, and identifier's names being careful about the case sensitivity cuz sql is not case sensitive about commands but it is about id's
+
