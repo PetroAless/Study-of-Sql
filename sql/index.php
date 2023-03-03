@@ -1,6 +1,5 @@
 <?php 
-    echo "php starting...<br><br>";
-    require_once "connect.php";
+    //echo "php starting...<br><br>";
     include_once "library.php";
 ?>
 <!DOCTYPE html>
@@ -12,19 +11,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>TRY OF SQL + PHP</h1>
-
-    <form action="#" target="_self" method="post">
-        <label for="name">NOME:</label><input type="text" name="name" id="name"><br>
-        <label for="surname">COGNOME:</label><input type="text" name="surname" id="surname"><br>
-        <input type="submit" value="submit" name="submit">
+    <!--<h1>TRY OF SQL + PHP</h1>-->
+    <?php 
+        $columns = "";
+        $values = "";
+        $_POST['age']=$_POST['name']=$_POST['surname']="";
+    ?>
+    <form method="post" action="insert.php">
+        <label for="name">NOME: </label><input type="text" name="name" id="name"><br>
+        <label for="surname">COGNOME: </label><input type="text" name="surname" id="surname"><br>
+        <label for="age">ETA': </label> <input type="number" name="age" id="age"> <br>
+        <button name="submit">submit</button>
     </form>
-    <?php
-        
-        //$statement = $pdo ->prepare("INSERT INTO ppl (firstName,lastName) VALUES ('Alessio','Petrotta');");
-        statement($pdo,"firstName,lastName,age","Guido,Rossi,13");
-
-        echo "<br>php closing<br>";
+    <?php 
+        //echo "<br>php closing<br>";
     ?>
 </body>
 </html>

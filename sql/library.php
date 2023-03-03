@@ -4,6 +4,7 @@
             echo $i.">".$arr[$i]."<br>";
         }
     }
+    
     function fromStringToArrayOfStrings($string){//function that takes a string and divides it in many strings
         $j = 0;
         $strtemp = "";
@@ -22,22 +23,41 @@
                 $strtemp = "";// reset of temp for new chars
             }
             $j++; //next char
-            
-            
-            
         }
         return $strres; //return result array
-    }
+    }/*
     function NplaceHolders($arr){
         return str_repeat("?, ",count($arr)-1)."?";
+    }*/
+    function checkContents($string){
+        for ($i=0; $i <strlen($string) ; $i++) { 
+            
+        }
+    }
+    function addSingleQuote($string){ //from str to str with single quotes between elements;
+        $res="";
+        $tmp="'";
+        for ($i=0; $i <strlen($string) ; $i++) { 
+            if($string[$i]!=",")
+                $tmp.=$string[$i];
+            
+            if(!isset($string[$i+1])){ 
+                $res.=$tmp;
+                break;
+            }
+            if($string[$i+1]==","){
+                $tmp.="'";
+                $res.=$tmp.",";
+                $tmp="'";
+            }
+        }
+        $res.="'";
+        return $res;
     }
     function statement($pdoTmp, $columnS, $contents ){ //insert into passing a pdo instance and strings for variables
-        //$column is the name of the column it's gonna fill and contents is the fields
-        $arrCont = fromStringToArrayOfStrings($contents);//create array of every single content of field
-        $placeHolders=NplaceHolders($arrCont);//create a number of placeholders of the same length of arrCont
-        //$arrColumn = fromStringToArrayOfStrings($columnS); not used, maybe in future
-        $sql = "INSERT INTO ppl ($columnS) VALUES ($placeHolders);";
+        //$columnS is the name of the column it's gonna fill and contents is the fields
+        $sql = "INSERT INTO ppl ($columnS) VALUES ($contents);";
         $stm = $pdoTmp->prepare($sql);
-        $stm -> execute($arrCont);
+        $stm -> execute();
     }
 ?>
