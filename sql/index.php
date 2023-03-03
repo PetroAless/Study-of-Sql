@@ -1,4 +1,5 @@
 <?php 
+    echo "php starting...<br><br>";
     require_once "connect.php";
     include_once "library.php";
 ?>
@@ -12,23 +13,18 @@
 </head>
 <body>
     <h1>TRY OF SQL + PHP</h1>
-    <?php
-        echo "php starting...<br>";
-        //statement($pdo,"(firstName, lastName)","'Alessio', 'Petrotta'");
-        //$statement = $pdo ->prepare("INSERT INTO ppl (firstName,lastName) VALUES ('Alessio','Petrotta');");
-        
-        
-        
-        statement($pdo,"firstName,lastName","Giulio,Giulini");
-        
 
-        //$statement ->execute([]);
-        echo "php closing";
-    ?>
     <form action="#" target="_self" method="post">
         <label for="name">NOME:</label><input type="text" name="name" id="name"><br>
         <label for="surname">COGNOME:</label><input type="text" name="surname" id="surname"><br>
         <input type="submit" value="submit" name="submit">
     </form>
+    <?php
+        
+        //$statement = $pdo ->prepare("INSERT INTO ppl (firstName,lastName) VALUES ('Alessio','Petrotta');");
+        statement($pdo,"firstName,lastName,age","Guido,Rossi,13");
+
+        echo "<br>php closing<br>";
+    ?>
 </body>
 </html>
