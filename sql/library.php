@@ -25,10 +25,19 @@
             $j++; //next char
         }
         return $strres; //return result array
-    }/*
-    function NplaceHolders($arr){
-        return str_repeat("?, ",count($arr)-1)."?";
-    }*/
+    }
+    function fromPOSTtoString($post){
+        $res=array();//change all posts results to a string to put in db
+        $i = 0;
+        foreach ($post as $key => $value) {
+            if($i==count($post)-1){
+                $res[0].=$key;
+            }else{
+                $res[0].=$key.",";
+            }
+            $i++;
+        }
+    }
     function checkContents($string){
         for ($i=0; $i <strlen($string) ; $i++) { 
             
@@ -59,5 +68,28 @@
         $sql = "INSERT INTO ppl ($columnS) VALUES ($contents);";
         $stm = $pdoTmp->prepare($sql);
         $stm -> execute();
+    }
+    function selectFrom($pdoTmp, $tbl, $columnS){
+        echo "<h1>This is your db</h1>";
+        $sql = "SELECT $columnS FROM $tbl;";
+        $stm = $pdoTmp->query($sql);
+        $columnS = fromStringToArrayOfStrings($columnS);
+        
+        echo "<table>";
+        echo "<tr>";
+        for ($i=0; $i <  count($columnS) ; $i++) { 
+            echo "<th>".$columnS[$i]."</th>";
+        }
+        echo "</tr>";
+        foreach($stm as $row){
+            echo "<tr>";
+            for ($i=0; $i < count($columnS) ; $i++) { 
+                echo "<td>";
+                echo $row[$columnS[$i]]." ";
+                echo "</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
     }
 ?>
