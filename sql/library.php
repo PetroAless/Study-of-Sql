@@ -32,7 +32,8 @@
         $res[1]="";
         $i = 0;
         foreach ($post as $key => $value) {
-            if($i==count($post)-1){
+            if($key=="submit")continue;
+            if($i==count($post)-2){
                 $res[0].=$key;
                 $res[1].=$value;
             }else{
