@@ -20,21 +20,14 @@
 </head>
 <body>
     <!--<h1>TRY OF SQL + PHP</h1>-->
-    <?php 
-        $columns = "";
-        $values = "";
-        $_POST['age']=$_POST['name']=$_POST['surname']="";
-    ?>
     <form method="post" action="insert.php">
-        <label for="name">NOME: </label><input type="text" name="name" id="name"><br>
-        <label for="surname">COGNOME: </label><input type="text" name="surname" id="surname"><br>
+        <label for="firstName">NOME: </label><input type="text" name="firstName" id="firstName"><br>
+        <label for="lastName">COGNOME: </label><input type="text" name="lastName" id="lastName"><br>
         <label for="age">ETA': </label> <input type="number" name="age" id="age"> <br>
         <button name="submit">submit</button>
     </form>
     <?php 
         //                                          echo "<br>php closing<br>";
-        
-        
         
         selectFrom($pdo,"ppl","firstName,lastName,age");
     ?>

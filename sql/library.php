@@ -26,17 +26,22 @@
         }
         return $strres; //return result array
     }
-    function fromPOSTtoString($post){
+    function fromPOSTtoStringS($post){
         $res=array();//change all posts results to a string to put in db
+        $res[0]="";
+        $res[1]="";
         $i = 0;
         foreach ($post as $key => $value) {
             if($i==count($post)-1){
                 $res[0].=$key;
+                $res[1].=$value;
             }else{
                 $res[0].=$key.",";
+                $res[1].=$value.",";
             }
             $i++;
         }
+        return $res;
     }
     function checkContents($string){
         for ($i=0; $i <strlen($string) ; $i++) { 
