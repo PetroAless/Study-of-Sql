@@ -21,15 +21,15 @@
 <body>
     <!--<h1>TRY OF SQL + PHP</h1>-->
     <form method="post" action="insert.php">
-        <label for="firstName">NOME: </label><input type="text" name="firstName" id="firstName"><br>
-        <label for="lastName">COGNOME: </label><input type="text" name="lastName" id="lastName"><br>
-        <label for="age">ETA': </label> <input type="number" name="age" id="age"> <br>
+        <label for="firstName">Nome: </label><input type="text" name="firstName" id="firstName"><br>
+        <label for="lastName">Cognome: </label><input type="text" name="lastName" id="lastName"><br>
+        <label for="dateOfBirth">Anno di nascita: </label> <input type="date" name="dateOfBirth" id="dateOfBirth"> <br>
         <button name="submit">submit</button>
     </form>
     <?php 
         //                                          echo "<br>php closing<br>";
         
-        selectFrom($pdo,"ppl","firstName,lastName,age");
+        selectFrom($pdo,"PPL","firstName,lastName,dateOfBirth");
     ?>
 </body>
 </html>
