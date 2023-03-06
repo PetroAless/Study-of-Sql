@@ -69,13 +69,13 @@
         $res.="'";
         return $res;
     }
-    function statement($pdoTmp, $columnS, $contents ){ //insert into passing a pdo instance and strings for variables
+    function statement($pdoTmp,$tbl, $columnS, $contents ){ //insert into passing a pdo instance and strings for variables
         //$columnS is the name of the column it's gonna fill and contents is the fields
-        $sql = "INSERT INTO ppl ($columnS) VALUES ($contents);";
+        $sql = "INSERT INTO $tbl ($columnS) VALUES ($contents);";
         $stm = $pdoTmp->prepare($sql);
         $stm -> execute();
     }
-    function selectFrom($pdoTmp, $tbl, $columnS){
+    function selectFrom($pdoTmp, $tbl, $columnS){//output of DATABASE!!
         echo "<h1>This is your db</h1>";
         $sql = "SELECT $columnS FROM $tbl;";
         $stm = $pdoTmp->query($sql);

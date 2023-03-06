@@ -6,7 +6,7 @@
     $values = $columns_values[1];
     $values = addSingleQuote($values);
     myPrintArray($columns_values);
-    statement($pdo,$columns,$values);
+    statement($pdo,$table,$columns,$values);
     
     echo "sending data";
     header("Location: index.php");

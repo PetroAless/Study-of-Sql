@@ -3,6 +3,7 @@
     $db = 'mydb';
     $username = 'root';
     $password = '3141';
+    $table = 'PPL';
     $connection = "mysql:host=$host;dbname=$db;charset=utf8";
     try{
         $pdo=new PDO($connection,$username,$password);
