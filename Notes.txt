@@ -6,4 +6,24 @@ Basic commands //there will be exercises later or notes after 2 slashes
 
 //it is a best practice to write commands in all caps, and identifier's names being careful about the case sensitivity cuz sql is not case sensitive about commands but it is about id's
 
-Mysql software that translates sql in actions on the database,
+Mysql software that translates sql in actions on the database
+
+
+
+
+
+SELECT, INSERT INTO ECC
+UPDATE:
+    changes the content of a field
+
+    UPDATE tbl_name 
+    SET column1=val1, column2=val2 ,...,columnN=valN
+    WHERE 'condition';
+
+
+SELECT TOP:
+    SELECT column_name
+    FROM table_name
+    WHERE condition
+    LIMIT number_of_records
+

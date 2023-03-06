@@ -29,13 +29,13 @@
     function fromPOSTtoStringS($post){
         $res=array();//change all posts results to a string to put in db
         $res[0]="";
-        $res[1]="";
+        $res[1]="";//set the elements to return
         $i = 0;
         foreach ($post as $key => $value) {
-            if($key=="submit")continue;
-            if($i==count($post)-2){
+            if($i==count($post)-1){ //-1 to refer to the last element and not put another comma
                 $res[0].=$key;
                 $res[1].=$value;
+                break;
             }else{
                 $res[0].=$key.",";
                 $res[1].=$value.",";
