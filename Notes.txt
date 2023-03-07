@@ -21,7 +21,7 @@
     WHERE 'condition';
 
 
---SELECT:
+--LIMIT OFFSET:
 
     --selects records with a certain offset and a certain number of records
     SELECT column_name
@@ -30,4 +30,33 @@
     LIMIT number_of_records OFFSET numberToNotConsider;
 
 
+--GROUP BY:
+    -- groups rows by column
 
+
+
+--JOINS
+    --it's used to get records connected through a single column in common, (foreign key)
+    --there are many Joins, the normal is the inner join, which returns the rows with the foreign key in common;
+    --the left join returns the left table, and even the rows without a match 
+    ex:                                                         LEFT JOIN!
++----+----------+--------+---------------------+
+| ID | NAME     | AMOUNT | DATE                |
++----+----------+--------+---------------------+
+|  1 | Ramesh   |   NULL | NULL                |
+|  2 | Khilan   |   1560 | 2009-11-20 00:00:00 | eg:(Customer.ID = Orders.customer_ID)
+|  3 | kaushik  |   3000 | 2009-10-08 00:00:00 |
+|  3 | kaushik  |   1500 | 2009-10-08 00:00:00 |--can see there are 4 situations without a match so it fills with null
+|  4 | Chaitali |   2060 | 2008-05-20 00:00:00 |--cuz the right table doesn't have any ID of the right table as value
+|  5 | Hardik   |   NULL | NULL                |
+|  6 | Komal    |   NULL | NULL                |
+|  7 | Muffy    |   NULL | NULL                |
++----+----------+--------+---------------------+
+    --RIGHT JOIN returns the right table, and even the rows without a match
+    ex: the same as above, in case the right table has some Orders.customer_ID that are not present in Customer.ID
+    --Full join mixes both joins
+    
+
+    --Union e union all are used to return 1 or more select without creating a new query and in the same table
+    --union all returns even dubplicate rows
+    
