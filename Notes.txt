@@ -60,3 +60,14 @@
     --Union e union all are used to return 1 or more select without creating a new query and in the same table
     --union all returns even dubplicate rows
     
+
+    --HAVING clause, is used cuz the WHERE keyword can't be used with functions like COUNT();
+
+    --COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION are all operations that help in mantaining the state of the db 
+    --and work in many queries at the same time and execute them all together and are called TRANSACTIONS
+    --COMMIT saves the state of the db in that exact moment used with:
+    --ROLLBACK to "roll back" to the state committed
+    --SAVEPOINT is used in the middle of the transactions like COMMIT
+    --SET TRANSACTION is used to give a name to the transaction
+
+    
