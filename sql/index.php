@@ -40,7 +40,8 @@
     <?php 
         //                                          echo "<br>php closing<br>";
         
-        selectFrom($pdo,"PPL","ID,firstName,lastName,dateOfBirth,gender,email,city,country");
+        selectFrom($pdo,"PPL","ID,firstName,lastName,dateOfBirth,gender,email,city,country,home_ID");
+        selectFrom($pdo,"homes","ID,address,mq2");
     ?>
 </body>
 </html>
