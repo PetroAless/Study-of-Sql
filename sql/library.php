@@ -76,7 +76,7 @@
         $stm -> execute();
     }
     function selectFrom($pdoTmp, $tbl, $columnS){//output of DATABASE!!
-        echo "<h1>This is your db</h1>";
+        echo "<h1>This is \"$tbl\" from your db</h1>";
         $sql = "SELECT $columnS FROM $tbl;";
         $stm = $pdoTmp->query($sql);
         $columnS = fromStringToArrayOfStrings($columnS);
